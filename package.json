@@ -8,6 +8,25 @@
   "bin": {
     "routines": "./dist/cli.js"
   },
+  "exports": {
+    "./pi": "./src/pi/extension.ts"
+  },
+  "keywords": [
+    "pi-package",
+    "routines",
+    "scheduler",
+    "effect",
+    "effect-cluster",
+    "cron"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/pi/extension.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
   "scripts": {
     "dev": "tsx src/cli.ts",
     "daemon": "tsx src/cli.ts daemon",
@@ -26,7 +45,11 @@
     "@effect/sql-sqlite-node": "^0.52.0",
     "@effect/workflow": "^0.18.2",
     "effect": "^3.21.4",
-    "yaml": "^2.8.2"
+    "yaml": "^2.8.2",
+    "typebox": "1.1.38"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
